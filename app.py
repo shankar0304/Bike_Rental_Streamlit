@@ -37,19 +37,19 @@ if page == "🏡 Dashboard":
 
     # ---------------- HERO BANNER ---------------- #
 
-    st.image("assets/hero_banner.png", use_container_width=True)
+     st.image("assets/hero_banner.png", use_container_width=True)
 
-    st.markdown("""
-    <h1 style='font-size:55px;margin-bottom:0px;'>
-    🏍️ Bike Rental Intelligence Dashboard
-    </h1>
+     st.markdown("""
+     <h1 style='font-size:55px;margin-bottom:0px;'>
+     🏍️ Bike Rental Intelligence Dashboard
+     </h1>
 
-    <h4 style='color:#94A3B8;margin-top:5px;'>
-    AI Powered Demand Forecasting & Business Analytics Platform
-    </h4>
-    """, unsafe_allow_html=True)
+     <h4 style='color:#94A3B8;margin-top:5px;'>
+     AI Powered Demand Forecasting & Business Analytics Platform
+     </h4>
+     """, unsafe_allow_html=True)
 
-    st.write("")
+     st.write("")
 
     # ---------------- KPI CARDS ---------------- #
 
@@ -70,59 +70,59 @@ if page == "🏡 Dashboard":
     st.divider()
     st.markdown("## 🚀 Project Overview")
 
-st.write("""
+ st.write("""
 
-This dashboard predicts bike rental demand using
-Machine Learning and weather-based features.
+ This dashboard predicts bike rental demand using
+ Machine Learning and weather-based features.
 
-The system analyzes environmental conditions,
-time-related variables, and seasonal patterns
-to estimate expected rental demand.
+ The system analyzes environmental conditions,
+ time-related variables, and seasonal patterns
+ to estimate expected rental demand.
 
-It enables business owners to optimize bike
-availability, reduce operational costs,
-and improve customer satisfaction.
+  It enables business owners to optimize bike
+  availability, reduce operational costs,
+  and improve customer satisfaction.
 
-""")
-st.divider()
+  """)
+  st.divider()
 
-st.markdown("## 🛠️ Technology Stack")
+  st.markdown("## 🛠️ Technology Stack")
 
-c1, c2, c3, c4 = st.columns(4)
+  c1, c2, c3, c4 = st.columns(4)
 
-c1.success("Python")
-c2.info("XGBoost")
-c3.warning("Streamlit")
-c4.success("Pandas")
-st.divider()
+  c1.success("Python")
+  c2.info("XGBoost")
+  c3.warning("Streamlit")
+  c4.success("Pandas")
+  st.divider()
 
-st.markdown("## 🔄 Machine Learning Workflow")
+  st.markdown("## 🔄 Machine Learning Workflow")
 
-st.markdown("""
+  st.markdown("""
 
-📂 Dataset
+  📂 Dataset
+ 
+  ⬇️
 
-⬇️
+  🧹 Data Cleaning
 
-🧹 Data Cleaning
+  ⬇️
 
-⬇️
+  📊 Feature Engineering
 
-📊 Feature Engineering
+  ⬇️
 
-⬇️
+  🤖 Model Training
 
-🤖 Model Training
+  ⬇️
 
-⬇️
+  🏆 XGBoost Selected
 
-🏆 XGBoost Selected
+  ⬇️
 
-⬇️
+  🚀 Streamlit Deployment
 
-🚀 Streamlit Deployment
-
-""")
+  """)
 
 # ---------------- FORECAST ---------------- #
 elif page == "🚀 Demand Forecast":
