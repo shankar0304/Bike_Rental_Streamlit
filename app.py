@@ -35,18 +35,39 @@ page = st.sidebar.radio(
 # ---------------- DASHBOARD ---------------- #
 if page == "🏡 Dashboard":
 
+    # ---------------- HERO BANNER ---------------- #
+
     st.image("assets/hero_banner.png", use_container_width=True)
 
-    st.markdown("# 🏍️ Bike Rental Intelligence Dashboard")
+    st.markdown("""
+    <h1 style='font-size:55px;margin-bottom:0px;'>
+    🏍️ Bike Rental Intelligence Dashboard
+    </h1>
 
-    st.markdown(
-        """
-AI-Powered Bike Rental Demand Forecasting System.
+    <h4 style='color:#94A3B8;margin-top:5px;'>
+    AI Powered Demand Forecasting & Business Analytics Platform
+    </h4>
+    """, unsafe_allow_html=True)
 
-Predict rental demand using weather conditions,
-season, temperature, humidity and environmental factors.
-"""
-    )
+    st.write("")
+
+    # ---------------- KPI CARDS ---------------- #
+
+    col1, col2, col3, col4 = st.columns(4)
+
+    with col1:
+        st.metric("📊 Dataset", "17,379")
+
+    with col2:
+        st.metric("🧠 Best Model", "XGBoost")
+
+    with col3:
+        st.metric("🎯 Features", "18")
+
+    with col4:
+        st.metric("🚀 Status", "Ready")
+
+    st.divider()
 
 # ---------------- FORECAST ---------------- #
 elif page == "🚀 Demand Forecast":
