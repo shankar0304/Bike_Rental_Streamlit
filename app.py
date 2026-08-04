@@ -18,8 +18,7 @@ def load_css():
 load_css()
 
 # ================= SIDEBAR ================= #
-
-st.sidebar.image("assets/logo.png", width=120)
+st.sidebar.write("🏍️ Bike Rental Intelligence")
 
 st.sidebar.markdown("## 🏍️ Bike Rental Intelligence")
 st.sidebar.markdown("---")
@@ -40,7 +39,7 @@ if page == "🏡 Dashboard":
 
     # ---------- HERO BANNER ---------- #
 
-    st.image("assets/hero_banner.png", use_container_width=True)
+    st.title("Bike Rental Intelligence Dashboard")
 
     st.markdown(
         """
