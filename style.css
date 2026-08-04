@@ -1,26 +1,28 @@
+/* =======================
+   GLOBAL
+======================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html, body, [class*="css"] {
+    font-family: 'Poppins', sans-serif;
+}
+
 /* Background */
+
 .stApp{
-    background-color:#0F172A;
-    color:white;
+    background:#0F172A;
 }
 
 /* Sidebar */
+
 section[data-testid="stSidebar"]{
     background:#111827;
+    border-right:1px solid #1F2937;
 }
 
-/* Title */
-h1{
-    color:white;
-    font-weight:700;
-}
+/* Hide Streamlit */
 
-/* Radio Buttons */
-div[role="radiogroup"] label{
-    font-size:18px !important;
-}
-
-/* Remove Streamlit Menu */
 #MainMenu{
     visibility:hidden;
 }
@@ -31,4 +33,74 @@ footer{
 
 header{
     visibility:hidden;
+}
+
+/* Titles */
+
+h1{
+    color:white;
+    font-weight:700;
+}
+
+h2{
+    color:white;
+}
+
+h3{
+    color:white;
+}
+
+p{
+    color:#CBD5E1;
+}
+
+/* Divider */
+
+hr{
+    border:1px solid #1E293B;
+}
+
+/* Metric Cards */
+
+.metric-card{
+
+    background:#1E293B;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    text-align:center;
+
+    border:1px solid #334155;
+
+    transition:0.4s;
+}
+
+.metric-card:hover{
+
+    transform:translateY(-6px);
+
+    border:1px solid #3B82F6;
+
+    box-shadow:0px 10px 25px rgba(59,130,246,0.35);
+
+}
+
+.metric-title{
+
+    color:#94A3B8;
+
+    font-size:18px;
+
+}
+
+.metric-value{
+
+    font-size:42px;
+
+    color:white;
+
+    font-weight:bold;
+
 }
