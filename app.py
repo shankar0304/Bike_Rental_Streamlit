@@ -1,6 +1,7 @@
 import streamlit as st
 
-# ---------------- PAGE CONFIG ---------------- #
+# ================= PAGE CONFIG ================= #
+
 st.set_page_config(
     page_title="Bike Rental Intelligence Dashboard",
     page_icon="🏍️",
@@ -8,14 +9,16 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# ---------------- LOAD CSS ---------------- #
+# ================= LOAD CSS ================= #
+
 def load_css():
     with open("style.css") as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 load_css()
 
-# ---------------- SIDEBAR ---------------- #
+# ================= SIDEBAR ================= #
+
 st.sidebar.image("assets/logo.png", width=120)
 
 st.sidebar.markdown("## 🏍️ Bike Rental Intelligence")
@@ -31,27 +34,30 @@ page = st.sidebar.radio(
         "📘 Documentation"
     ]
 )
+# ================= DASHBOARD ================= #
 
-# ---------------- DASHBOARD ---------------- #
 if page == "🏡 Dashboard":
 
-    # ---------------- HERO BANNER ---------------- #
+    # ---------- HERO BANNER ---------- #
 
-     st.image("assets/hero_banner.png", use_container_width=True)
+    st.image("assets/hero_banner.png", use_container_width=True)
 
-     st.markdown("""
-     <h1 style='font-size:55px;margin-bottom:0px;'>
-     🏍️ Bike Rental Intelligence Dashboard
-     </h1>
+    st.markdown(
+        """
+        <h1 style="font-size:55px; margin-bottom:0;">
+        🏍️ Bike Rental Intelligence Dashboard
+        </h1>
 
-     <h4 style='color:#94A3B8;margin-top:5px;'>
-     AI Powered Demand Forecasting & Business Analytics Platform
-     </h4>
-     """, unsafe_allow_html=True)
+        <h4 style="color:#94A3B8;">
+        AI Powered Demand Forecasting & Business Analytics Platform
+        </h4>
+        """,
+        unsafe_allow_html=True,
+    )
 
-     st.write("")
+    st.write("")
 
-    # ---------------- KPI CARDS ---------------- #
+    # ---------- KPI CARDS ---------- #
 
     col1, col2, col3, col4 = st.columns(4)
 
@@ -68,86 +74,169 @@ if page == "🏡 Dashboard":
         st.metric("🚀 Status", "Ready")
 
     st.divider()
+
+    # ---------- PROJECT OVERVIEW ---------- #
+
     st.markdown("## 🚀 Project Overview")
 
- st.write("""
+    st.write(
+        """
+This dashboard predicts bike rental demand using Machine Learning
+and weather-based features.
 
- This dashboard predicts bike rental demand using
- Machine Learning and weather-based features.
+The system analyzes environmental conditions, seasonal patterns,
+and time-related variables to estimate expected rental demand.
 
- The system analyzes environmental conditions,
- time-related variables, and seasonal patterns
- to estimate expected rental demand.
+It helps optimize bike availability, reduce operational costs,
+and improve customer satisfaction.
+"""
+    )
 
-  It enables business owners to optimize bike
-  availability, reduce operational costs,
-  and improve customer satisfaction.
+    st.divider()
 
-  """)
-  st.divider()
+    # ---------- TECHNOLOGY STACK ---------- #
 
-  st.markdown("## 🛠️ Technology Stack")
+    st.markdown("## 🛠️ Technology Stack")
 
-  c1, c2, c3, c4 = st.columns(4)
+    tech1, tech2, tech3, tech4 = st.columns(4)
 
-  c1.success("Python")
-  c2.info("XGBoost")
-  c3.warning("Streamlit")
-  c4.success("Pandas")
-  st.divider()
+    tech1.success("🐍 Python")
+    tech2.info("⚡ XGBoost")
+    tech3.warning("🎈 Streamlit")
+    tech4.success("🐼 Pandas")
 
-  st.markdown("## 🔄 Machine Learning Workflow")
+    st.divider()
 
-  st.markdown("""
+    # ---------- WORKFLOW ---------- #
 
-  📂 Dataset
- 
-  ⬇️
+    st.markdown("## 🔄 Machine Learning Workflow")
 
-  🧹 Data Cleaning
+    st.markdown(
+        """
+📂 Dataset
 
-  ⬇️
+⬇️
 
-  📊 Feature Engineering
+🧹 Data Cleaning
 
-  ⬇️
+⬇️
 
-  🤖 Model Training
+📊 Feature Engineering
 
-  ⬇️
+⬇️
 
-  🏆 XGBoost Selected
+🤖 Model Training
 
-  ⬇️
+⬇️
 
-  🚀 Streamlit Deployment
+🏆 XGBoost Selected
 
-  """)
+⬇️
 
-# ---------------- FORECAST ---------------- #
+🚀 Streamlit Deployment
+"""
+    )
+# ================= DEMAND FORECAST ================= #
+
 elif page == "🚀 Demand Forecast":
 
     st.title("🚀 Demand Forecast")
 
-    st.info("Prediction page will be built next.")
+    st.write(
+        "Enter the environmental and weather conditions below to predict the expected bike rental demand."
+    )
 
-# ---------------- ANALYTICS ---------------- #
-elif page == "📊 Analytics":
+    st.divider()
 
-    st.title("📊 Analytics")
+    # ---------- INPUT COLUMNS ---------- #
 
-    st.info("Analytics dashboard coming soon.")
+    left, right = st.columns(2)
 
-# ---------------- MODEL ---------------- #
-elif page == "🧠 Model Insights":
+    with left:
 
-    st.title("🧠 Model Insights")
+        season = st.selectbox(
+            "Season",
+            [1, 2, 3, 4]
+        )
 
-    st.info("Model comparison will be added.")
+        yr = st.selectbox(
+            "Year",
+            [0, 1]
+        )
 
-# ---------------- DOCUMENTATION ---------------- #
-elif page == "📘 Documentation":
+        mnth = st.slider(
+            "Month",
+            1,
+            12,
+            6
+        )
 
-    st.title("📘 Documentation")
+        hr = st.slider(
+            "Hour",
+            0,
+            23,
+            12
+        )
 
-    st.info("Project documentation will be added.")
+        holiday = st.selectbox(
+            "Holiday",
+            [0, 1]
+        )
+
+        weekday = st.slider(
+            "Weekday",
+            0,
+            6,
+            3
+        )
+
+    with right:
+
+        workingday = st.selectbox(
+            "Working Day",
+            [0, 1]
+        )
+
+        weathersit = st.selectbox(
+            "Weather Situation",
+            [1, 2, 3, 4]
+        )
+
+        temp = st.slider(
+            "Temperature",
+            0.0,
+            1.0,
+            0.50
+        )
+
+        atemp = st.slider(
+            "Feels Like Temperature",
+            0.0,
+            1.0,
+            0.50
+        )
+
+        hum = st.slider(
+            "Humidity",
+            0.0,
+            1.0,
+            0.50
+        )
+
+        windspeed = st.slider(
+            "Wind Speed",
+            0.0,
+            1.0,
+            0.20
+        )
+
+    st.divider()
+
+    if st.button("🚀 Predict Demand", use_container_width=True):
+
+        st.success("Prediction functionality will be connected in the next step.")
+
+        st.metric(
+            "Predicted Bike Rentals",
+            "--"
+        )
