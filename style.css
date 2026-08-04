@@ -1,0 +1,34 @@
+/* Background */
+.stApp{
+    background-color:#0F172A;
+    color:white;
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"]{
+    background:#111827;
+}
+
+/* Title */
+h1{
+    color:white;
+    font-weight:700;
+}
+
+/* Radio Buttons */
+div[role="radiogroup"] label{
+    font-size:18px !important;
+}
+
+/* Remove Streamlit Menu */
+#MainMenu{
+    visibility:hidden;
+}
+
+footer{
+    visibility:hidden;
+}
+
+header{
+    visibility:hidden;
+}
