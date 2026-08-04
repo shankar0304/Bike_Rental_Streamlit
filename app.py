@@ -1,56 +1,77 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
-import joblib
 
 # ---------------- PAGE CONFIG ---------------- #
-
 st.set_page_config(
-    page_title="Bike Rental Demand Prediction",
-    page_icon="🚲",
-    layout="wide"
+    page_title="Bike Rental Intelligence Dashboard",
+    page_icon="🏍️",
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
 
-# ---------------- LOAD MODEL ---------------- #
-
-model = joblib.load("bike_rental_model.pkl")
-scaler = joblib.load("scaler.pkl")
-feature_columns = joblib.load("feature_columns.pkl")
-
 # ---------------- LOAD CSS ---------------- #
-
-try:
+def load_css():
     with open("style.css") as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-except:
-    pass
+
+load_css()
 
 # ---------------- SIDEBAR ---------------- #
+st.sidebar.image("assets/logo.png", width=120)
 
-st.sidebar.title("🚲 Navigation")
+st.sidebar.markdown("## 🏍️ Bike Rental Intelligence")
+st.sidebar.markdown("---")
 
 page = st.sidebar.radio(
-    "Select Page",
+    "Navigation",
     [
-        "🏠 Home",
-        "🚲 Prediction",
-        "📊 EDA Dashboard",
-        "📈 Model Performance",
-        "ℹ️ About"
+        "🏡 Dashboard",
+        "🚀 Demand Forecast",
+        "📊 Analytics",
+        "🧠 Model Insights",
+        "📘 Documentation"
     ]
 )
 
-# ---------------- HOME PAGE ---------------- #
+# ---------------- DASHBOARD ---------------- #
+if page == "🏡 Dashboard":
 
-if page == "🏠 Home":
+    st.image("assets/hero_banner.png", use_container_width=True)
 
-    st.title("🚲 Bike Rental Demand Prediction")
+    st.markdown("# 🏍️ Bike Rental Intelligence Dashboard")
 
-    st.write("""
-Welcome to the Bike Rental Demand Prediction System.
+    st.markdown(
+        """
+AI-Powered Bike Rental Demand Forecasting System.
 
-This application predicts bike rental demand using weather, season,
-temperature, humidity and other environmental factors.
-""")
+Predict rental demand using weather conditions,
+season, temperature, humidity and environmental factors.
+"""
+    )
 
-    st.success("Select a page from the sidebar to continue.")
+# ---------------- FORECAST ---------------- #
+elif page == "🚀 Demand Forecast":
+
+    st.title("🚀 Demand Forecast")
+
+    st.info("Prediction page will be built next.")
+
+# ---------------- ANALYTICS ---------------- #
+elif page == "📊 Analytics":
+
+    st.title("📊 Analytics")
+
+    st.info("Analytics dashboard coming soon.")
+
+# ---------------- MODEL ---------------- #
+elif page == "🧠 Model Insights":
+
+    st.title("🧠 Model Insights")
+
+    st.info("Model comparison will be added.")
+
+# ---------------- DOCUMENTATION ---------------- #
+elif page == "📘 Documentation":
+
+    st.title("📘 Documentation")
+
+    st.info("Project documentation will be added.")
