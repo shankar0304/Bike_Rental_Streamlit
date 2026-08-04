@@ -240,3 +240,52 @@ elif page == "🚀 Demand Forecast":
             "Predicted Bike Rentals",
             "--"
         )
+    # ================= ANALYTICS ================= #
+
+elif page == "📊 Analytics":
+
+    st.title("📊 Data Analytics Dashboard")
+
+    st.write(
+        "Explore key insights and visualizations from the Bike Rental dataset."
+    )
+
+    st.divider()
+
+    # ---------- KPI CARDS ---------- #
+
+    kpi1, kpi2, kpi3, kpi4 = st.columns(4)
+
+    with kpi1:
+        st.metric("📊 Total Records", "17,379")
+
+    with kpi2:
+        st.metric("🎯 Features", "18")
+
+    with kpi3:
+        st.metric("🧠 Best Model", "XGBoost")
+
+    with kpi4:
+        st.metric("📈 Status", "Ready")
+
+    st.divider()
+
+    st.markdown("## 📈 Analytics Available")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.info("📅 Hourly Rental Analysis")
+        st.info("🌦️ Weather Impact")
+        st.info("🍂 Seasonal Demand")
+
+    with col2:
+        st.info("🔥 Correlation Heatmap")
+        st.info("📊 Feature Distribution")
+        st.info("📉 Rental Trends")
+
+    st.divider()
+
+    st.success(
+        "Interactive Plotly charts will be added in the next phase."
+    )
