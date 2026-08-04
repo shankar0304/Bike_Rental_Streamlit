@@ -13,9 +13,9 @@ st.set_page_config(
 
 # ---------------- LOAD MODEL ---------------- #
 
-model = joblib.load("model/bike_rental_model.pkl")
-scaler = joblib.load("model/scaler.pkl")
-feature_columns = joblib.load("model/feature_columns.pkl")
+model = joblib.load("bike_rental_model.pkl")
+scaler = joblib.load("scaler.pkl")
+feature_columns = joblib.load("feature_columns.pkl")
 
 # ---------------- LOAD CSS ---------------- #
 
