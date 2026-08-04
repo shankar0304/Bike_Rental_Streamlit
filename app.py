@@ -289,3 +289,106 @@ elif page == "📊 Analytics":
     st.success(
         "Interactive Plotly charts will be added in the next phase."
     )
+    # ================= MODEL INSIGHTS ================= #
+
+elif page == "🧠 Model Insights":
+
+    st.title("🧠 Model Insights")
+
+    st.write(
+        "Performance summary of the machine learning models used for bike rental demand prediction."
+    )
+
+    st.divider()
+
+    st.markdown("## 🏆 Best Model")
+
+    st.success("✅ XGBoost was selected as the best-performing model.")
+
+    st.divider()
+
+    st.markdown("## 📊 Model Comparison")
+
+    model_data = {
+        "Model": [
+            "Linear Regression",
+            "Decision Tree",
+            "Random Forest",
+            "XGBoost"
+        ],
+        "Status": [
+            "Baseline",
+            "Good",
+            "Very Good",
+            "Best Model ✅"
+        ]
+    }
+
+    st.table(model_data)
+
+    st.divider()
+
+    st.markdown("## ⭐ Why XGBoost?")
+
+    st.markdown("""
+- High prediction accuracy
+- Handles nonlinear relationships
+- Reduces overfitting
+- Fast and efficient
+- Suitable for structured tabular datasets
+""")
+
+    st.divider()
+
+    st.info("📌 Feature Importance chart will be added in the next phase.")
+    # ================= DOCUMENTATION ================= #
+
+elif page == "📘 Documentation":
+
+    st.title("📘 Project Documentation")
+
+    st.divider()
+
+    st.markdown("## 🎯 Problem Statement")
+
+    st.write("""
+Predict the number of bike rentals based on weather,
+season, temperature, humidity, and time-related features.
+""")
+
+    st.divider()
+
+    st.markdown("## 📂 Dataset")
+
+    st.write("""
+Dataset: Bike Sharing Demand Dataset
+
+Records: 17,379
+
+Target Variable:
+• Bike Rental Count
+""")
+
+    st.divider()
+
+    st.markdown("## ⚙️ Machine Learning Pipeline")
+
+    st.markdown("""
+1. Data Cleaning
+
+2. Exploratory Data Analysis
+
+3. Feature Engineering
+
+4. Model Training
+
+5. Model Evaluation
+
+6. XGBoost Model Selection
+
+7. Streamlit Deployment
+""")
+
+    st.divider()
+
+    st.success("🚀 Developed using Python, XGBoost and Streamlit.")
