@@ -68,6 +68,61 @@ if page == "🏡 Dashboard":
         st.metric("🚀 Status", "Ready")
 
     st.divider()
+    st.markdown("## 🚀 Project Overview")
+
+st.write("""
+
+This dashboard predicts bike rental demand using
+Machine Learning and weather-based features.
+
+The system analyzes environmental conditions,
+time-related variables, and seasonal patterns
+to estimate expected rental demand.
+
+It enables business owners to optimize bike
+availability, reduce operational costs,
+and improve customer satisfaction.
+
+""")
+st.divider()
+
+st.markdown("## 🛠️ Technology Stack")
+
+c1, c2, c3, c4 = st.columns(4)
+
+c1.success("Python")
+c2.info("XGBoost")
+c3.warning("Streamlit")
+c4.success("Pandas")
+st.divider()
+
+st.markdown("## 🔄 Machine Learning Workflow")
+
+st.markdown("""
+
+📂 Dataset
+
+⬇️
+
+🧹 Data Cleaning
+
+⬇️
+
+📊 Feature Engineering
+
+⬇️
+
+🤖 Model Training
+
+⬇️
+
+🏆 XGBoost Selected
+
+⬇️
+
+🚀 Streamlit Deployment
+
+""")
 
 # ---------------- FORECAST ---------------- #
 elif page == "🚀 Demand Forecast":
