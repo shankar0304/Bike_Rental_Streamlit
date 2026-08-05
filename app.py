@@ -1,4 +1,7 @@
 import streamlit as st
+import joblib
+import pandas as pd
+import numpy as np
 
 # ================= PAGE CONFIG ================= #
 
@@ -16,6 +19,11 @@ def load_css():
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 load_css()
+# ================= LOAD MODEL ================= #
+
+model = joblib.load("bike_rental_model.pkl")
+scaler = joblib.load("scaler.pkl")
+feature_columns = joblib.load("feature_columns.pkl")
 
 # ================= SIDEBAR ================= #
 st.sidebar.image("assets/logo.png", width=120)
