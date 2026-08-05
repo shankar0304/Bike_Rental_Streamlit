@@ -695,74 +695,78 @@ elif selected == "Analytics":
     st.plotly_chart(fig6, use_container_width=True)
 
     # ================= MODEL INSIGHTS ================= #
-
 elif selected == "Model":
-    
-        st.title("🧠 Model Insights")
-    
-        st.write(
-            "Performance summary of the machine learning models used for bike rental demand prediction."
-        )
-    
-        st.divider()
-    
-        st.markdown("## 🏆 Best Model")
-    
-        st.success("✅ XGBoost was selected as the best-performing model.")
-    
-        st.divider()
-        st.markdown("## 📈 Model Performance")
-    
-        col1, col2, col3, col4 = st.columns(4)
-    
+
+    st.title("🧠 Model Insights")
+
+    st.write(
+        "Performance summary of the machine learning models used for bike rental demand prediction."
+    )
+
+    st.divider()
+
+    st.markdown("## 🏆 Best Model")
+
+    st.success("✅ XGBoost was selected as the best-performing model.")
+
+    st.divider()
+
+    # ================= PERFORMANCE =================
+    st.markdown("## 📈 Model Performance")
+
+    col1, col2, col3, col4 = st.columns(4)
+
     with col1:
         st.metric("🎯 Accuracy", "98.76%")
-    
+
     with col2:
         st.metric("📉 RMSE", "42.18")
-    
+
     with col3:
         st.metric("📈 R² Score", "0.94")
-    
+
     with col4:
         st.metric("🏆 Best Model", "XGBoost")
-    
+
     st.divider()
-    
+
+    # ================= MODEL COMPARISON =================
     st.markdown("## 📊 Model Comparison")
-    
-        model_data = {
-            "Model": [
-                "Linear Regression",
-                "Decision Tree",
-                "Random Forest",
-                "XGBoost"
-            ],
-            "Status": [
-                "Baseline",
-                "Good",
-                "Very Good",
-                "Best Model ✅"
-            ]
-        }
-    
-        st.table(model_data)
-    
-        st.divider()
-    
-        st.markdown("## ⭐ Why XGBoost?")
-    
-        st.markdown("""
-    - High prediction accuracy
-    - Handles nonlinear relationships
-    - Reduces overfitting
-    - Fast and efficient
-    - Suitable for structured tabular datasets
-    """)
-    
-        st.divider()
-    
-        st.info("📌 Feature Importance chart will be added in the next phase.")
+
+    model_data = {
+        "Model": [
+            "Linear Regression",
+            "Decision Tree",
+            "Random Forest",
+            "XGBoost"
+        ],
+        "Status": [
+            "Baseline",
+            "Good",
+            "Very Good",
+            "Best Model ✅"
+        ]
+    }
+
+    st.table(model_data)
+
+    st.divider()
+
+    # ================= WHY XGBOOST =================
+    st.markdown("## ⭐ Why XGBoost?")
+
+    st.markdown("""
+- High prediction accuracy
+- Handles nonlinear relationships
+- Reduces overfitting
+- Fast and efficient
+- Suitable for structured tabular datasets
+""")
+
+    st.divider()
+
+    st.info("📌 Feature Importance chart will be added in the next phase.")
+
     # ================= DOCUMENTATION ================= #
 
 elif selected == "Docs":
