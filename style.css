@@ -104,3 +104,16 @@ hr{
     font-weight:bold;
 
 }
+/* ---------- TOP NAVIGATION ---------- */
+
+div[data-testid="stHorizontalBlock"]{
+    align-items:center;
+}
+
+div[data-testid="stToolbar"]{
+    visibility:hidden;
+}
+
+.st-emotion-cache-1r6slb0{
+    border-radius:18px;
+}
