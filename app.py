@@ -285,17 +285,17 @@ elif page == "🚀 Demand Forecast":
          st.subheader("Reordered Data")
          st.dataframe(input_data)
 
- # Scale the input
+         # Scale the input
          scaled_input = scaler.transform(input_data)
-
-# Predict
+ 
+         # Predict
          prediction = model.predict(scaled_input)
 
          predicted_rentals = int(prediction[0])
 
          st.divider()
 
-# Decide demand level
+         # Decide demand level
          if predicted_rentals < 100:
             demand = "🔴 LOW DEMAND"
             color = "#EF4444"
@@ -308,7 +308,7 @@ elif page == "🚀 Demand Forecast":
              demand = "🟢 HIGH DEMAND"
              color = "#22C55E"
 
-# Premium Prediction Card
+        # Premium Prediction Card
         st.markdown(f"""
         <div style="
         background:#1E293B;
@@ -338,7 +338,7 @@ elif page == "🚀 Demand Forecast":
        </div>
        """, unsafe_allow_html=True)
 
-# Demand Status Card
+       # Demand Status Card
        st.markdown(f"""
        <div style="
        background:{color};
