@@ -240,8 +240,7 @@ and improve customer satisfaction.
 🚀 Streamlit Deployment
 """
     )
-# ================= DEMAND FORECAST ================= #
-
+# ================= DEMAND FORECAST ================= # 
 elif selected == "Forecast":
 
     st.title("🚀 Demand Forecast")
