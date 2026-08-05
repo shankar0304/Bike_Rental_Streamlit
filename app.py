@@ -168,7 +168,7 @@ and improve customer satisfaction.
     )
 
     st.divider()
-    st.divider()
+st.divider()
 
 st.markdown("## 📈 Business Insights")
 
