@@ -527,6 +527,36 @@ elif selected == "Analytics":
    )
 
     st.plotly_chart(fig, use_container_width=True)
+    st.divider()
+
+st.subheader("🌦️ Weather vs Bike Rentals")
+
+weather = df.groupby("weathersit")["cnt"].mean().reset_index()
+
+weather["weathersit"] = weather["weathersit"].replace({
+    1: "Clear",
+    2: "Mist",
+    3: "Light Rain",
+    4: "Heavy Rain"
+})
+
+fig2 = px.bar(
+    weather,
+    x="weathersit",
+    y="cnt",
+    color="cnt",
+    text="cnt",
+    title="Average Bike Rentals by Weather"
+)
+
+fig2.update_layout(
+    template="plotly_dark",
+    xaxis_title="Weather",
+    yaxis_title="Average Rentals",
+    height=500
+)
+
+st.plotly_chart(fig2, use_container_width=True)
     # ================= MODEL INSIGHTS ================= #
 
 elif selected == "Model":
