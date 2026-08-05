@@ -765,7 +765,6 @@ elif selected == "Model":
 
     st.divider()
 
-    st.info("📌 Feature Importance chart will be added in the next phase.")
 
     # ================= DOCUMENTATION ================= #
 
