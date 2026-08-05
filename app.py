@@ -526,7 +526,7 @@ elif selected == "Analytics":
      height=500
    )
 
-   st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True)
     # ================= MODEL INSIGHTS ================= #
 
 elif selected == "Model":
