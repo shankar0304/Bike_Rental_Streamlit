@@ -175,7 +175,7 @@ and improve customer satisfaction.
     left, right = st.columns(2)
 
     with left:
-    st.info("""
+      st.info("""
     📊 Peak rental hours:
     • 8 AM
     • 5 PM
@@ -183,7 +183,7 @@ and improve customer satisfaction.
     """)
 
     with right:
-    st.success("""
+      st.success("""
     🌦️ Best weather:
     • Clear Sky
     • Mild Temperature
