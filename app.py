@@ -729,7 +729,7 @@ with col4:
 
 st.divider()
 
-    st.markdown("## 📊 Model Comparison")
+st.markdown("## 📊 Model Comparison")
 
     model_data = {
         "Model": [
