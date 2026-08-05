@@ -557,6 +557,27 @@ elif selected == "Analytics":
   )
 
     st.plotly_chart(fig2, use_container_width=True)
+        st.divider()
+
+    st.subheader("🌡️ Temperature vs Bike Rentals")
+
+    fig3 = px.scatter(
+        df,
+        x="temp",
+        y="cnt",
+        color="season",
+        title="Temperature vs Bike Rentals",
+        opacity=0.7
+    )
+
+    fig3.update_layout(
+        template="plotly_dark",
+        xaxis_title="Temperature",
+        yaxis_title="Bike Rentals",
+        height=500
+    )
+
+    st.plotly_chart(fig3, use_container_width=True)
     # ================= MODEL INSIGHTS ================= #
 
 elif selected == "Model":
