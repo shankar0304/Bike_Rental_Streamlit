@@ -531,7 +531,7 @@ elif selected == "Analytics":
 
     st.subheader("🌦️ Weather vs Bike Rentals")
 
-        weather = df.groupby("weathersit")["cnt"].mean().reset_index()
+     weather = df.groupby("weathersit")["cnt"].mean().reset_index()
 
         weather["weathersit"] = weather["weathersit"].replace({
           1: "Clear",
