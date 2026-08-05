@@ -452,23 +452,23 @@ Low demand expected.
          elif predicted_rentals < 300:
 
              st.warning("""
-Moderate demand expected.
+               Moderate demand expected.
 
-• Maintain normal bike availability.
-• Monitor rentals regularly.
-• No major operational changes required.
-""")
+               • Maintain normal bike availability.
+               • Monitor rentals regularly.
+               • No major operational changes required.
+               """)
 
          else:
 
          st.success("""
-High demand expected.
+           High demand expected.
 
-• Increase bike availability.
-• Deploy extra staff.
-• Ensure all bikes are ready.
-• Great opportunity to maximize revenue.
-""")
+           • Increase bike availability.
+           • Deploy extra staff.
+           • Ensure all bikes are ready.
+           • Great opportunity to maximize revenue.
+          """)
     # ---------- KPI CARDS ---------- #
 
     kpi1, kpi2, kpi3, kpi4 = st.columns(4)
