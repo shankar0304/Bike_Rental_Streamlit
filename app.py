@@ -615,7 +615,7 @@ elif selected == "Analytics":
       markers=True
   )
 
-   fig8.update_layout(
+    fig8.update_layout(
      template="plotly_dark",
      height=500
  )
