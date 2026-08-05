@@ -63,6 +63,28 @@ selected = option_menu(
     ],
     orientation="horizontal",
     default_index=0,
+
+    styles={
+        "container": {
+            "padding": "8px",
+            "background-color": "#1E293B",
+            "border-radius": "18px"
+        },
+        "icon": {
+            "color": "#38BDF8",
+            "font-size": "18px"
+        },
+        "nav-link": {
+            "font-size": "17px",
+            "color": "white",
+            "text-align": "center",
+            "margin": "5px",
+            "border-radius": "12px",
+        },
+        "nav-link-selected": {
+            "background-color": "#2563EB",
+        },
+    }
 )
 
 st.divider()
