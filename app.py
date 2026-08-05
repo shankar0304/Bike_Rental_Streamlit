@@ -509,24 +509,24 @@ elif selected == "Analytics":
 
     st.markdown("## 📈 Hourly Rental Trend")
 
-hourly = df.groupby("hr")["cnt"].mean().reset_index()
+      hourly = df.groupby("hr")["cnt"].mean().reset_index()
 
-fig = px.line(
-    hourly,
-    x="hr",
-    y="cnt",
-    markers=True,
-    title="Average Bike Rentals by Hour"
-)
+    fig = px.line(
+     hourly,
+     x="hr",
+     y="cnt",
+     markers=True,
+     title="Average Bike Rentals by Hour"
+    )
 
-fig.update_layout(
-    xaxis_title="Hour of Day",
-    yaxis_title="Average Rentals",
-    template="plotly_dark",
-    height=500
-)
+    fig.update_layout(
+     xaxis_title="Hour of Day",
+     yaxis_title="Average Rentals",
+     template="plotly_dark",
+     height=500
+   )
 
-st.plotly_chart(fig, use_container_width=True)
+   st.plotly_chart(fig, use_container_width=True)
     # ================= MODEL INSIGHTS ================= #
 
 elif selected == "Model":
