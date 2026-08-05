@@ -241,7 +241,7 @@ and improve customer satisfaction.
 """
     )
 # ================= DEMAND FORECAST ================= # 
-elif selected == "Forecast":
+    elif selected == "Forecast":
 
     st.title("🚀 Demand Forecast")
 
