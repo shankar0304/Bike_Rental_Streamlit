@@ -303,13 +303,13 @@ elif page == "🚀 Demand Forecast":
            )
 
          if predicted_rentals < 100:
-         st.error("🔴 Low Rental Demand")
+           st.error("🔴 Low Rental Demand")
 
          elif predicted_rentals < 300:
-         st.warning("🟡 Medium Rental Demand")
+           st.warning("🟡 Medium Rental Demand")
 
          else:
-         st.success("🟢 High Rental Demand")
+           st.success("🟢 High Rental Demand")
         
 
     # ---------- KPI CARDS ---------- #
