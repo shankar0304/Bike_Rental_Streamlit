@@ -295,23 +295,64 @@ elif page == "🚀 Demand Forecast":
 
          st.divider()
 
-         st.success("✅ Prediction Completed!")
-
-         st.metric(
-              "🏍️ Predicted Bike Rentals",
-         predicted_rentals
-           )
-
+# Decide demand level
          if predicted_rentals < 100:
-           st.error("🔴 Low Rental Demand")
+            demand = "🔴 LOW DEMAND"
+            color = "#EF4444"
 
          elif predicted_rentals < 300:
-           st.warning("🟡 Medium Rental Demand")
+              demand = "🟡 MEDIUM DEMAND"
+              color = "#FACC15"
 
          else:
-           st.success("🟢 High Rental Demand")
-        
+             demand = "🟢 HIGH DEMAND"
+             color = "#22C55E"
 
+# Premium Prediction Card
+        st.markdown(f"""
+        <div style="
+        background:#1E293B;
+        padding:30px;
+        border-radius:20px;
+        text-align:center;
+        border:2px solid #38BDF8;
+        margin-top:20px;
+        ">
+
+       <h4 style="color:#94A3B8;">
+       🏍️ Predicted Bike Rental Demand
+       </h4>
+
+       <h1 style="
+       font-size:60px;
+       color:#38BDF8;
+       margin:10px 0;
+       ">
+       {predicted_rentals}
+       </h1>
+
+       <h3 style="color:white;">
+       Expected Rentals
+       </h3>
+
+       </div>
+       """, unsafe_allow_html=True)
+
+# Demand Status Card
+       st.markdown(f"""
+       <div style="
+       background:{color};
+       padding:18px;
+       border-radius:15px;
+       text-align:center;
+       font-size:24px;
+       font-weight:bold;
+       color:white;
+       margin-top:20px;
+       ">
+       {demand}
+       </div>
+       """, unsafe_allow_html=True)
     # ---------- KPI CARDS ---------- #
 
     kpi1, kpi2, kpi3, kpi4 = st.columns(4)
