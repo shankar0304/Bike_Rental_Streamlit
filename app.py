@@ -509,7 +509,7 @@ elif selected == "Analytics":
 
     st.markdown("## 📈 Hourly Rental Trend")
 
-      hourly = df.groupby("hr")["cnt"].mean().reset_index()
+    hourly = df.groupby("hr")["cnt"].mean().reset_index()
 
     fig = px.line(
      hourly,
