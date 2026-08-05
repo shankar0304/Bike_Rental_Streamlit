@@ -507,7 +507,26 @@ elif selected == "Analytics":
 
     st.divider()
 
-    st.info("Interactive charts will be added later.")
+    st.markdown("## 📈 Hourly Rental Trend")
+
+hourly = df.groupby("hr")["cnt"].mean().reset_index()
+
+fig = px.line(
+    hourly,
+    x="hr",
+    y="cnt",
+    markers=True,
+    title="Average Bike Rentals by Hour"
+)
+
+fig.update_layout(
+    xaxis_title="Hour of Day",
+    yaxis_title="Average Rentals",
+    template="plotly_dark",
+    height=500
+)
+
+st.plotly_chart(fig, use_container_width=True)
     # ================= MODEL INSIGHTS ================= #
 
 elif selected == "Model":
