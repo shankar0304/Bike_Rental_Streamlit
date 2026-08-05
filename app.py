@@ -27,24 +27,43 @@ scaler = joblib.load("scaler.pkl")
 feature_columns = joblib.load("feature_columns.pkl")
 
 # ================= SIDEBAR ================= #
-st.sidebar.image("assets/logo.png", width=120)
+# ================= TOP NAVIGATION ================= #
 
-st.sidebar.markdown("## 🏍️ Bike Rental Intelligence")
-st.sidebar.markdown("---")
+col1, col2 = st.columns([1, 5])
 
-page = st.sidebar.radio(
-    "Navigation",
-    [
-        "🏡 Dashboard",
-        "🚀 Demand Forecast",
-        "📊 Analytics",
-        "🧠 Model Insights",
-        "📘 Documentation"
-    ]
+with col1:
+    st.image("assets/logo.png", width=80)
+
+with col2:
+    st.markdown(
+        "<h2 style='margin-top:15px;'>🏍️ Bike Rental Intelligence</h2>",
+        unsafe_allow_html=True,
+    )
+
+selected = option_menu(
+    menu_title=None,
+    options=[
+        "Dashboard",
+        "Forecast",
+        "Analytics",
+        "Model",
+        "Docs"
+    ],
+    icons=[
+        "house-fill",
+        "rocket-fill",
+        "bar-chart-fill",
+        "cpu-fill",
+        "book-fill"
+    ],
+    orientation="horizontal",
+    default_index=0,
 )
+
+st.divider()
 # ================= DASHBOARD ================= #
 
-if page == "🏡 Dashboard":
+if selected == "Dashboard":
 
     # ---------- HERO BANNER ---------- #
 
@@ -167,7 +186,7 @@ and improve customer satisfaction.
     )
 # ================= DEMAND FORECAST ================= #
 
-elif page == "🚀 Demand Forecast":
+elif selected == "Forecast":
 
     st.title("🚀 Demand Forecast")
 
@@ -393,7 +412,7 @@ elif page == "🚀 Demand Forecast":
     )
     # ================= ANALYTICS ================= #
 
-elif page == "📊 Analytics":
+elif selected == "Analytics":
 
     st.title("📊 Data Analytics Dashboard")
 
@@ -439,7 +458,7 @@ elif page == "📊 Analytics":
     st.info("Interactive charts will be added later.")
     # ================= MODEL INSIGHTS ================= #
 
-elif page == "🧠 Model Insights":
+elif selected == "Model":
 
     st.title("🧠 Model Insights")
 
@@ -491,7 +510,7 @@ elif page == "🧠 Model Insights":
     st.info("📌 Feature Importance chart will be added in the next phase.")
     # ================= DOCUMENTATION ================= #
 
-elif page == "📘 Documentation":
+elif selected == "Docs":
 
     st.title("📘 Project Documentation")
 
