@@ -39,7 +39,7 @@ if page == "🏡 Dashboard":
 
     # ---------- HERO BANNER ---------- #
 
-    st.title("Bike Rental Intelligence Dashboard")
+    st.image("assets/hero_banner.png", use_container_width=True)
 
     st.markdown(
         """
