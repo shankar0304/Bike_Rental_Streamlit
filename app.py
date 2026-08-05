@@ -435,7 +435,7 @@ elif selected == "Forecast":
          st.progress(progress)
 
          st.write(f"Demand Score: **{progress*100:.1f}%**")
-                 st.divider()
+         st.divider() 
 
          st.subheader("💡 Business Recommendation")
 
