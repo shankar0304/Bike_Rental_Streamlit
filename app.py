@@ -533,7 +533,7 @@ elif selected == "Analytics":
 
     weather = df.groupby("weathersit")["cnt"].mean().reset_index()
 
-        weather["weathersit"] = weather["weathersit"].replace({
+    weather["weathersit"] = weather["weathersit"].replace({
           1: "Clear",
           2: "Mist",
           3: "Light Rain",
