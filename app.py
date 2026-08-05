@@ -578,6 +578,28 @@ elif selected == "Analytics":
     )
 
     st.plotly_chart(fig3, use_container_width=True)
+    st.divider()
+
+    st.subheader("📅 Monthly Rental Trend")
+
+    monthly = df.groupby("mnth")["cnt"].mean().reset_index()
+
+    fig4 = px.line(
+        monthly,
+        x="mnth",
+        y="cnt",
+        markers=True,
+        title="Average Bike Rentals by Month"
+    )
+
+    fig4.update_layout(
+        template="plotly_dark",
+        xaxis_title="Month",
+        yaxis_title="Average Rentals",
+        height=500
+    )
+
+    st.plotly_chart(fig4, use_container_width=True)
     # ================= MODEL INSIGHTS ================= #
 
 elif selected == "Model":
