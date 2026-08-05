@@ -125,39 +125,39 @@ if selected == "Dashboard":
 
     col1, col2, col3, col4 = st.columns(4)
 
-with col1:
-    st.markdown(f"""
+    with col1:
+     st.markdown(f"""
     <div class="metric-card">
         <div class="metric-title">📊 Total Records</div>
         <div class="metric-value">{total_records:,}</div>
     </div>
     """, unsafe_allow_html=True)
 
-with col2:
-    st.markdown(f"""
+    with col2:
+     st.markdown(f"""
     <div class="metric-card">
         <div class="metric-title">🚲 Avg Rentals</div>
         <div class="metric-value">{avg_rentals}</div>
     </div>
     """, unsafe_allow_html=True)
 
-with col3:
-    st.markdown(f"""
+    with col3:
+     st.markdown(f"""
     <div class="metric-card">
         <div class="metric-title">🌡️ Avg Temp</div>
         <div class="metric-value">{avg_temp}</div>
     </div>
     """, unsafe_allow_html=True)
 
-with col4:
-    st.markdown(f"""
+    with col4:
+     st.markdown(f"""
     <div class="metric-card">
         <div class="metric-title">💧 Avg Humidity</div>
         <div class="metric-value">{avg_humidity}</div>
     </div>
     """, unsafe_allow_html=True)
 
-    st.divider()
+     st.divider()
     # ---------- PROJECT OVERVIEW ---------- #
 
     st.markdown("## 🚀 Project Overview")
