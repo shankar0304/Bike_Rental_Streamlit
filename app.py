@@ -168,27 +168,27 @@ and improve customer satisfaction.
     )
 
     st.divider()
-st.divider()
+    st.divider()
 
-st.markdown("## 📈 Business Insights")
+    st.markdown("## 📈 Business Insights")
 
-left, right = st.columns(2)
+    left, right = st.columns(2)
 
-with left:
+    with left:
     st.info("""
-📊 Peak rental hours:
-• 8 AM
-• 5 PM
-• 6 PM
-""")
+    📊 Peak rental hours:
+    • 8 AM
+    • 5 PM
+    • 6 PM
+    """)
 
-with right:
+    with right:
     st.success("""
-🌦️ Best weather:
-• Clear Sky
-• Mild Temperature
-• Low Humidity
-""")
+    🌦️ Best weather:
+    • Clear Sky
+    • Mild Temperature
+    • Low Humidity
+    """)
 
     # ---------- TECHNOLOGY STACK ---------- #
 
