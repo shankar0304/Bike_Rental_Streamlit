@@ -620,8 +620,8 @@ elif selected == "Analytics":
      height=500
  )
 
-st.plotly_chart(fig8, use_container_width=True)
-st.divider()
+    st.plotly_chart(fig8, use_container_width=True)
+    st.divider()
 
     st.subheader("🍂 Season Distribution")
 
