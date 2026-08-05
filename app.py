@@ -133,7 +133,7 @@ with col1:
     </div>
     """, unsafe_allow_html=True)
 
- with col2:
+with col2:
     st.markdown(f"""
     <div class="metric-card">
         <div class="metric-title">🚲 Avg Rentals</div>
