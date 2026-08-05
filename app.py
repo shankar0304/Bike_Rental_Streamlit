@@ -29,17 +29,22 @@ feature_columns = joblib.load("feature_columns.pkl")
 # ================= SIDEBAR ================= #
 # ================= TOP NAVIGATION ================= #
 
-col1, col2 = st.columns([1, 5])
+col1, col2 = st.columns([1,8])
 
 with col1:
-    st.image("assets/logo.png", width=80)
+    st.image("assets/logo.png", width=65)
 
 with col2:
-    st.markdown(
-        "<h2 style='margin-top:15px;'>🏍️ Bike Rental Intelligence</h2>",
-        unsafe_allow_html=True,
-    )
-
+    st.markdown("""
+    <h1 style="
+    color:white;
+    margin-top:8px;
+    font-size:42px;
+    font-weight:700;
+    ">
+    🏍️ Bike Rental Intelligence
+    </h1>
+    """, unsafe_allow_html=True)
 selected = option_menu(
     menu_title=None,
     options=[
