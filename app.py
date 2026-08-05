@@ -426,6 +426,49 @@ elif selected == "Forecast":
          {demand}
          </div>
          """, unsafe_allow_html=True)
+         st.divider()
+
+         st.subheader("📊 Demand Meter")
+
+         progress = min(predicted_rentals / 1000, 1.0)
+
+         st.progress(progress)
+
+         st.write(f"Demand Score: **{progress*100:.1f}%**")
+                 st.divider()
+
+         st.subheader("💡 Business Recommendation")
+
+         if predicted_rentals < 100:
+
+             st.error("""
+Low demand expected.
+
+• Keep fewer bikes available.
+• Perform maintenance during this period.
+• Reduce operational costs.
+""")
+
+         elif predicted_rentals < 300:
+
+             st.warning("""
+Moderate demand expected.
+
+• Maintain normal bike availability.
+• Monitor rentals regularly.
+• No major operational changes required.
+""")
+
+         else:
+
+        st.success("""
+High demand expected.
+
+• Increase bike availability.
+• Deploy extra staff.
+• Ensure all bikes are ready.
+• Great opportunity to maximize revenue.
+""")
     # ---------- KPI CARDS ---------- #
 
     kpi1, kpi2, kpi3, kpi4 = st.columns(4)
