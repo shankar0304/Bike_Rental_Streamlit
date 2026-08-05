@@ -557,7 +557,7 @@ elif selected == "Analytics":
   )
 
     st.plotly_chart(fig2, use_container_width=True)
-        st.divider()
+    st.divider()
 
     st.subheader("🌡️ Temperature vs Bike Rentals")
 
