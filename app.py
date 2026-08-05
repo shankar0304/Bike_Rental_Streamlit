@@ -259,8 +259,7 @@ elif page == "🚀 Demand Forecast":
         )
 
     st.divider()
-
-   if st.button("🚀 Predict Demand", use_container_width=True):
+    if st.button("🚀 Predict Demand", use_container_width=True):
 
     input_data = pd.DataFrame({
         "season": [season],
