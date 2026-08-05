@@ -261,24 +261,24 @@ elif page == "🚀 Demand Forecast":
     st.divider()
     if st.button("🚀 Predict Demand", use_container_width=True):
 
-    input_data = pd.DataFrame({
-        "season": [season],
-        "yr": [yr],
-        "mnth": [mnth],
-        "hr": [hr],
-        "holiday": [holiday],
-        "weekday": [weekday],
-        "workingday": [workingday],
-        "weathersit": [weathersit],
-        "temp": [temp],
-        "atemp": [atemp],
-        "hum": [hum],
-        "windspeed": [windspeed]
-    })
+         input_data = pd.DataFrame({
+            "season": [season],
+            "yr": [yr],
+            "mnth": [mnth],
+            "hr": [hr],
+            "holiday": [holiday],
+            "weekday": [weekday],
+            "workingday": [workingday],
+            "weathersit": [weathersit],
+            "temp": [temp],
+            "atemp": [atemp],
+            "hum": [hum],
+            "windspeed": [windspeed]
+         })
 
-    st.subheader("Input Data")
+         st.subheader("Input Data")
 
-    st.dataframe(input_data)
+         st.dataframe(input_data)
     # ================= ANALYTICS ================= #
 
 elif page == "📊 Analytics":
