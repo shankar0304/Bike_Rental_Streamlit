@@ -25,6 +25,7 @@ load_css()
 # ================= LOAD DATASET ================= #
 
 df = pd.read_csv("cleaned_dataset.csv")
+st.title("🚨 VERSION TEST")
 # ================= LOAD MODEL ================= #
 
 model = joblib.load("bike_rental_model.pkl")
