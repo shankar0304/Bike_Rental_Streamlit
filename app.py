@@ -279,48 +279,7 @@ elif page == "🚀 Demand Forecast":
          st.subheader("Input Data")
 
          st.dataframe(input_data)
-        # Reorder columns
-input_data = input_data.reindex(columns=feature_columns)
-
-st.subheader("Reordered Data")
-st.dataframe(input_data)
-
-# Scale the input
-scaled_input = scaler.transform(input_data)
-
-# Predict
-prediction = model.predict(scaled_input)
-
-predicted_rentals = int(prediction[0])
-
-st.divider()
-
-st.success("✅ Prediction Completed!")
-
-st.metric(
-    "🏍️ Predicted Bike Rentals",
-    predicted_rentals
-)
-
-if predicted_rentals < 100:
-    st.error("🔴 Low Rental Demand")
-
-elif predicted_rentals < 300:
-    st.warning("🟡 Medium Rental Demand")
-
-else:
-    st.success("🟢 High Rental Demand")
-    # ================= ANALYTICS ================= #
-
-elif page == "📊 Analytics":
-
-    st.title("📊 Data Analytics Dashboard")
-
-    st.write(
-        "Explore key insights and visualizations from the Bike Rental dataset."
-    )
-
-    st.divider()
+        
 
     # ---------- KPI CARDS ---------- #
 
