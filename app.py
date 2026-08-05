@@ -18,7 +18,7 @@ def load_css():
 load_css()
 
 # ================= SIDEBAR ================= #
-st.sidebar.write("🏍️ Bike Rental Intelligence")
+st.sidebar.image("assets/logo.png", width=120)
 
 st.sidebar.markdown("## 🏍️ Bike Rental Intelligence")
 st.sidebar.markdown("---")
