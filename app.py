@@ -600,6 +600,54 @@ elif selected == "Analytics":
     )
 
     st.plotly_chart(fig4, use_container_width=True)
+    st.divider()
+
+    st.subheader("🍂 Season Distribution")
+
+    season_data = df.groupby("season")["cnt"].sum().reset_index()
+
+    season_data["season"] = season_data["season"].replace({
+        1: "Spring",
+        2: "Summer",
+        3: "Fall",
+        4: "Winter"
+    })
+
+    fig5 = px.pie(
+        season_data,
+        names="season",
+        values="cnt",
+        hole=0.45,
+        title="Bike Rentals by Season"
+    )
+
+    fig5.update_layout(
+        template="plotly_dark",
+        height=550
+    )
+
+    st.plotly_chart(fig5, use_container_width=True)
+    st.divider()
+
+    st.subheader("🔥 Correlation Heatmap")
+
+    corr = df.corr(numeric_only=True)
+
+    fig6 = ff.create_annotated_heatmap(
+        z=corr.values,
+        x=list(corr.columns),
+        y=list(corr.index),
+        colorscale="Viridis",
+        showscale=True
+    )
+
+    fig6.update_layout(
+        template="plotly_dark",
+        height=700,
+        title="Feature Correlation Heatmap"
+    )
+
+    st.plotly_chart(fig6, use_container_width=True)
     # ================= MODEL INSIGHTS ================= #
 
 elif selected == "Model":
