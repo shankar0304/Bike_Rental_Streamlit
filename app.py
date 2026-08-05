@@ -1,4 +1,5 @@
 import streamlit as st
+import plotly.express as px
 from streamlit_option_menu import option_menu
 import joblib
 import pandas as pd
@@ -20,6 +21,9 @@ def load_css():
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 load_css()
+# ================= LOAD DATASET ================= #
+
+df = pd.read_csv("cleaned_dataset.csv")
 # ================= LOAD MODEL ================= #
 
 model = joblib.load("bike_rental_model.pkl")
