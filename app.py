@@ -117,44 +117,47 @@ if selected == "Dashboard":
     st.write("")
 
     # ---------- KPI CARDS ---------- #
-        # ---------- KPI CARDS ---------- #
+
+    total_records = len(df)
+    avg_rentals = int(df["cnt"].mean())
+    avg_temp = round(df["temp"].mean(), 2)
+    avg_humidity = round(df["hum"].mean(), 2)
 
     col1, col2, col3, col4 = st.columns(4)
 
-    with col1:
-        st.markdown("""
-        <div class="metric-card">
-            <div class="metric-title">📊 Dataset</div>
-            <div class="metric-value">17,379</div>
-        </div>
-        """, unsafe_allow_html=True)
+with col1:
+    st.markdown(f"""
+    <div class="metric-card">
+        <div class="metric-title">📊 Total Records</div>
+        <div class="metric-value">{total_records:,}</div>
+    </div>
+    """, unsafe_allow_html=True)
 
-    with col2:
-        st.markdown("""
-        <div class="metric-card">
-            <div class="metric-title">🧠 Best Model</div>
-            <div class="metric-value">XGBoost</div>
-        </div>
-        """, unsafe_allow_html=True)
+with col2:
+    st.markdown(f"""
+    <div class="metric-card">
+        <div class="metric-title">🚲 Avg Rentals</div>
+        <div class="metric-value">{avg_rentals}</div>
+    </div>
+    """, unsafe_allow_html=True)
 
-    with col3:
-        st.markdown("""
-        <div class="metric-card">
-            <div class="metric-title">🎯 Features</div>
-            <div class="metric-value">18</div>
-        </div>
-        """, unsafe_allow_html=True)
+with col3:
+    st.markdown(f"""
+    <div class="metric-card">
+        <div class="metric-title">🌡️ Avg Temp</div>
+        <div class="metric-value">{avg_temp}</div>
+    </div>
+    """, unsafe_allow_html=True)
 
-    with col4:
-        st.markdown("""
-        <div class="metric-card">
-            <div class="metric-title">🚀 Status</div>
-            <div class="metric-value">Ready</div>
-        </div>
-        """, unsafe_allow_html=True)
+with col4:
+    st.markdown(f"""
+    <div class="metric-card">
+        <div class="metric-title">💧 Avg Humidity</div>
+        <div class="metric-value">{avg_humidity}</div>
+    </div>
+    """, unsafe_allow_html=True)
 
     st.divider()
-
     # ---------- PROJECT OVERVIEW ---------- #
 
     st.markdown("## 🚀 Project Overview")
