@@ -4,6 +4,7 @@ from streamlit_option_menu import option_menu
 import joblib
 import pandas as pd
 import numpy as np
+import plotly.figure_factory as ff
 
 # ================= PAGE CONFIG ================= #
 
@@ -630,24 +631,23 @@ elif selected == "Analytics":
     st.divider()
 
     st.subheader("🔥 Correlation Heatmap")
-
     corr = df.corr(numeric_only=True)
 
-    fig6 = ff.create_annotated_heatmap(
-        z=corr.values,
-        x=list(corr.columns),
-        y=list(corr.index),
-        colorscale="Viridis",
-        showscale=True
+    fig6 = px.imshow(
+      corr,
+      text_auto=True,
+      aspect="auto",
+      color_continuous_scale="Viridis",
+      title="Feature Correlation Heatmap"
     )
 
     fig6.update_layout(
-        template="plotly_dark",
-        height=700,
-        title="Feature Correlation Heatmap"
+      template="plotly_dark",
+      height=700
     )
 
     st.plotly_chart(fig6, use_container_width=True)
+
     # ================= MODEL INSIGHTS ================= #
 
 elif selected == "Model":
