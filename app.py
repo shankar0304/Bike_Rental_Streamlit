@@ -260,14 +260,26 @@ elif page == "🚀 Demand Forecast":
 
     st.divider()
 
-    if st.button("🚀 Predict Demand", use_container_width=True):
+   if st.button("🚀 Predict Demand", use_container_width=True):
 
-        st.success("Prediction functionality will be connected in the next step.")
+    input_data = pd.DataFrame({
+        "season": [season],
+        "yr": [yr],
+        "mnth": [mnth],
+        "hr": [hr],
+        "holiday": [holiday],
+        "weekday": [weekday],
+        "workingday": [workingday],
+        "weathersit": [weathersit],
+        "temp": [temp],
+        "atemp": [atemp],
+        "hum": [hum],
+        "windspeed": [windspeed]
+    })
 
-        st.metric(
-            "Predicted Bike Rentals",
-            "--"
-        )
+    st.subheader("Input Data")
+
+    st.dataframe(input_data)
     # ================= ANALYTICS ================= #
 
 elif page == "📊 Analytics":
