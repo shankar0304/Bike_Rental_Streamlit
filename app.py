@@ -489,25 +489,6 @@ Low demand expected.
 
     st.divider()
 
-    st.markdown("## 📈 Analytics Available")
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-        st.info("📅 Hourly Rental Analysis")
-        st.info("🌦️ Weather Impact")
-        st.info("🍂 Seasonal Demand")
-
-    with col2:
-        st.info("🔥 Correlation Heatmap")
-        st.info("📊 Feature Distribution")
-        st.info("📉 Rental Trends")
-
-    st.divider()
-
-    st.success(
-        "Interactive Plotly charts will be added in the next phase."
-    )
     # ================= ANALYTICS ================= #
 
 elif selected == "Analytics":
