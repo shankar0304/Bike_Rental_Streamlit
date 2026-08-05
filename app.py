@@ -603,6 +603,26 @@ elif selected == "Analytics":
     st.plotly_chart(fig4, use_container_width=True)
     st.divider()
 
+    st.subheader("💧 Humidity vs Bike Rentals")
+
+    hum_df = df.groupby("hum")["cnt"].mean().reset_index()
+
+    fig8 = px.line(
+      hum_df,
+      x="hum",
+      y="cnt",
+      title="Average Rentals by Humidity",
+      markers=True
+  )
+
+   fig8.update_layout(
+     template="plotly_dark",
+     height=500
+ )
+
+st.plotly_chart(fig8, use_container_width=True)
+    st.divider()
+
     st.subheader("🍂 Season Distribution")
 
     season_data = df.groupby("season")["cnt"].sum().reset_index()
