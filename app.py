@@ -696,7 +696,7 @@ elif selected == "Analytics":
 
     # ================= MODEL INSIGHTS ================= #
 
-    elif selected == "Model":
+elif selected == "Model":
     
         st.title("🧠 Model Insights")
     
